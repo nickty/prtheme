@@ -1,0 +1,144 @@
+/*
+Theme Name: My Custom Theme
+Theme URI: https://example.com
+Author: Your Name
+Author URI: https://example.com
+Description: A custom WordPress theme
+Version: 1.0
+*/
+
+
+/* Basic menu styling */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+}
+
+.menu > li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu > li > a {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+}
+
+/* Dropdown menu styling */
+.menu li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.menu li:hover > ul {
+    display: block;
+}
+
+.menu li ul li {
+    position: relative;
+}
+
+.menu li ul li a {
+    padding: 10px 15px;
+    color: #333;
+    display: block;
+    text-decoration: none;
+}
+
+/* Sub-dropdown for multi-level */
+.menu li ul li ul {
+    left: 100%;
+    top: 0;
+    display: none;
+}
+
+.menu li ul li:hover > ul {
+    display: block;
+}
+
+/* Hover effects */
+.menu li a:hover,
+.menu li ul li a:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+
+/* Arrows for parent menu items */
+.menu .has-children > a {
+    position: relative;
+    padding-right: 20px; /* Add space for the arrow */
+}
+
+.menu .has-children > a:after {
+    content: '▼'; /* Dropdown arrow */
+    position: absolute;
+    right: 5px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Arrows for submenus (nested) */
+.menu .has-children > ul > .has-children > a:after {
+    content: '▶'; /* Right arrow for nested submenus */
+}
+
+/* Style dropdown on hover */
+.menu li:hover > ul {
+    display: block;
+}
+
+.menu .has-children > a:after {
+    content: '\f107'; /* Font Awesome down arrow */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.menu .has-children > ul > .has-children > a:after {
+    content: '\f105'; /* Font Awesome right arrow */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+/* General styling for parent menu items */
+.menu .has-children > a {
+    position: relative;
+    display: flex; /* Ensure the container aligns items */
+    align-items: center; /* Vertically center the arrow */
+    padding-right: 20px; /* Add space for the arrow */
+}
+
+/* Dropdown arrow for top-level menu items */
+.menu .has-children > a:after {
+    content: '\f105'; /* Dropdown arrow */
+    position: absolute;
+    right: 5px; /* Adjust distance from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    font-size: 12px; /* Set arrow size */
+    color: #333; /* Arrow color */
+}
+
+/* Right arrow for nested submenu items */
+.menu .has-children > ul > .has-children > a:after {
+    content: '\f105'; /* Right arrow for nested submenus */
+    position: absolute;
+    right: 5px; /* Adjust distance from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    font-size: 12px;
+    color: #333;
+}
